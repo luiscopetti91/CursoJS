@@ -45,10 +45,10 @@ describe('resto', function (){
 });
 
 describe('porcentajeX', function (){
-    it('Debería retornar el resultado de la suma entre X e Y', function (){
-        expect(porcentajeX(15, 15)).toEqual(50)
-        expect(porcentajeX(70, 30)).toEqual(30)
-        expect(porcentajeX(60, 40)).toEqual(40)
+    it('Debería retornar el porcentaje de chicos y chicas correctamente', function (){
+        expect(porcentajeX(15, 15)).toEqual([50, 50])
+        expect(porcentajeX(70, 30)).toEqual([70, 30])
+        expect(porcentajeX(60, 40)).toEqual([60, 40])
     });
 });
 

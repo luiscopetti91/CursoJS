@@ -3,27 +3,50 @@ function mayorEdad(personas){
     //Si son mayores de edad, tienes que retornar "Es mayor de edad", en caso que no cumpla la condición 
     //tendrás que retornar "Es menor de edad"
     //Tu código:
+    if (personas >= 18) {
+        return console.log("Es mayor de edad");
+    } else {
+        return console.log("Es menor de edad")
+    }
+  
 
 }
 
 function salario(personal, exp){
-    // En una empresa se le paga al personal un bono según su la experiencia que llevan en la empresa
+    // En una empresa se le paga al personal un bono según la experiencia que llevan en la empresa
     // si la persona lleva menor o igual a 5 años el bono es de $5.000, mayor a 5 años y menor a 20 años es de $10.000
     // mayor o igual a 20 años, el bono es de $15.000. tendrás que retornar un mensaje con el nombre del personal y el bono correspondiente
     // Ejemplo: "Pedro tu bono es de $10.000"
     // Tu código:
-
+    if (exp <= 5) {
+        return console.log(personal + " tu bono es de 5000")
+    } else if (exp > 5 && exp < 20) {
+       return console.log(personal + " tu bono es de 10000")
+    } else if (exp >= 20 ) {
+        return console.log(personal + " tu bono es de 15000")
+    }
 }
 
 function numPar(num){
     // Retorna true si 'num' es un numero par, casi contrario retorna false
     // Tu código:
+    if(num % 2 === 0) {
+        return true;
+    } else {
+        return false;
+    }
 
 }
 
 function numImpar(num){
     // Retorna true si 'num' es un numero impar, casi contrario retorna false
     // Tu código:
+
+    if (num % 2 !== 0) {
+        return true;
+    } else {
+        return false;
+    }
 
 }
 
@@ -32,6 +55,11 @@ function numPositivoNegativo(num){
     // Positivos -> "El numero es positivo"
     // Negativo -> "El numero es negativo"
     // Tu código:
+    if(num >= 0) {
+        return console.log("El numero es positivo")
+    } else {
+        return console.log("El numero es negativo")
+    }
 
 }
 
