@@ -24,10 +24,10 @@ describe('mayorEdad', function (){
 
 describe('salario', function (){
     it('Debería retornar el bono correspondiente según su exp', function(){
-        expect(salario("Leo", 4)).toBe("Leo tu bono es de $5.000");
-        expect(salario("Natalia", 20)).toBe("Natalia tu bono es de $15.000");
-        expect(salario("Martin", 25)).toBe("Martin tu bono es de $15.000");
-        expect(salario("Diego", 15)).toBe("Diego tu bono es de $10.000");
+        expect(salario("Leo", 4)).toBe("Leo tu bono es de $5000");
+        expect(salario("Natalia", 20)).toBe("Natalia tu bono es de $15000");
+        expect(salario("Martin", 25)).toBe("Martin tu bono es de $15000");
+        expect(salario("Diego", 15)).toBe("Diego tu bono es de $10000");
 
     });
 });
@@ -61,8 +61,8 @@ describe('numPositivoNegativo', function (){
 
 describe('cambioPesos', function (){
     it('Debería hacer la conversión de moneda correspondiente', function (){
-        expect(cambioPesos(50, "dólares")).toBe(18750)
-        expect(cambioPesos(100, "dólares")).toBe(37500)
+        expect(cambioPesos(50, "dolares")).toBe(18750)
+        expect(cambioPesos(100, "dolares")).toBe(37500)
         expect(cambioPesos(50, "euros")).toBe(19150)
         expect(cambioPesos(100, "euros")).toBe(38300)
         expect(cambioPesos(18150, "pesos argentinos")).toBe(18150)
