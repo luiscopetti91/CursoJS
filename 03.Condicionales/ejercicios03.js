@@ -8,7 +8,7 @@ function mayorEdad(personas){
     } else {
         return console.log("Es menor de edad")
     }
-  //HOLAAAAAAAAAAAAAAAAAA
+  //HOLA CHAMI NEGRA POTO RICO
 
 }
 
