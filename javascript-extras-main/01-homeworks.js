@@ -2,13 +2,18 @@
 function totalChar(string, stringdos){
     // deberas obetener la longitud de las cadenas pasadas por parametros y devolver el total
     //Tu codigo:
-
+    return string.length + stringdos.length
+    
 }
+
+
 
 function subCadena(string){
     // Recibirás por parametro una cadena de texto, la cual tendras que tomar los primeros 4 indices de la cadena y devolverla.
     // Ejemplo : "JavaScript" => "Java"
     // Tu codigo:
+
+    return string.slice(0, 4)
 
 }
 
