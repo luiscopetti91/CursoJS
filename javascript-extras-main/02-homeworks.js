@@ -24,9 +24,7 @@ function asignarCalificacion(puntuacion) {
 // puntuacion mayor o igual a 70 -> devolver "Calificación: C"
 // puntuacion mayor o igual a 60 -> devolver "Calificación: D"
 // puntuacion menor que 60 -> devolver "Calificación: F"
-if (puntuacion >= 90)
 
-}
 
 function esDiaLaboral(dia) {
   // Por parametros se pasa un día de la semana. tienes que crear un algoritmo que día es, y decir si es día laboral o no
