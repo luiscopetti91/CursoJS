@@ -4,8 +4,18 @@ function imprimirMayor(num1, num2) {
 // Ejemplo: num1 = 5 ; num2 = 6 -> deberia devolver "6 es mayor que 5".
 // En caso que sean iguales devolver "Los números son iguales"
 // Tu código:
-
+if (num1 > num2) {
+  return num1 + " es mayor que " + num2
+} else if (num2 > num1) {
+  return num2 + " es mayor que " + num1
+} else {
+  return "Los números son iguales"
 }
+}
+
+
+
+
 
 function asignarCalificacion(puntuacion) {
 // La funcion recibe un puntuación del 0 al 100, tienes que devolver la clasificacion correspondiente en letra sabiendo lo siguiente:
@@ -14,6 +24,7 @@ function asignarCalificacion(puntuacion) {
 // puntuacion mayor o igual a 70 -> devolver "Calificación: C"
 // puntuacion mayor o igual a 60 -> devolver "Calificación: D"
 // puntuacion menor que 60 -> devolver "Calificación: F"
+if (puntuacion >= 90)
 
 }
 
