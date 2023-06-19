@@ -25,12 +25,31 @@ function asignarCalificacion(puntuacion) {
 // puntuacion mayor o igual a 60 -> devolver "Calificación: D"
 // puntuacion menor que 60 -> devolver "Calificación: F"
 
+if (puntuacion >= 90) {
+  return "Calificación: A"
+} else if (puntuacion >= 80 && puntuacion < 90) {
+  return "Calificación: B"
+} else if (puntuacion >= 70 && puntuacion < 80) {
+  return "Calificación: C"
+} else if (puntuacion >= 60 && puntuacion < 70) {
+  return "Calificación: D"
+} else {
+  return "Calificación: F"
+}
+
+}
+
 
 function esDiaLaboral(dia) {
   // Por parametros se pasa un día de la semana. tienes que crear un algoritmo que día es, y decir si es día laboral o no
   // tener en cuenta lo siguiente Lunes a Viernes día laboral, Sabado y Domingo día no laboral.
   // Ejemplo: día = Jueves -> devolver "Jueves es un día laboral" || día = Domingo -> devolver "Domingo no es un día laboral"
   // Tu código: 
+  if (dia === "Lunes" || dia === "Martes" || dia === "Miercoles" || dia === "Jueves" || dia === "Viernes") {
+    return dia + " es un día laboral"
+  } else if (dia === "Sabado" || dia === "Domingo"){
+    return dia + " no es un día laboral"
+  }
 
 }
 
@@ -40,21 +59,48 @@ function determinarTipoDato(variable) {
   //En caso de recibir un tipo de dato desconocido devolver "Tipo de dato desconocido"
   // Tu código: 
 
+  if (typeof variable === "string") {
+    return "La variable es de tipo cadena de texto";
+  } else if (typeof variable === "number") {
+    return "La variable es de tipo número";
+  } else if (typeof variable === "boolean") {
+    return "La variable es de tipo booleano";
+  //} else if (typeof variable === "object") {
+   // return "La variable es de tipo objeto";
+  } else if (typeof variable === "function") {
+    return "La variable es de tipo función";
+  } else {
+    return "Tipo de dato desconocido";
+  }
+
 }
 
 function esCadenaVacia(cadena) {
   // Esta funcion debe verificar si 'cadena' está vacia o no. Devolver "La cadena está vacía" en caso que la cadena esté vacia y
   // "La cadena no está vacía" en caso de conterner al menos un caracter o más
   // Tu código:
+    if (cadena.length === 0) {
+      return "La cadena está vacía";
+    } else {
+      return "La cadena no está vacía";
+    }
+  }
 
-}
+
 
 function verificarContrasena(contrasena, passwd) {
   // Un usuario ingresa su contraseña para poder ingresar a su cuenta. verifica que la contraseña ingresada, sea exactamente igual a la guardada.
   // Devolver "Contraseña válida" en caso de coincidir, y "Contraseña inválida" en caso de no coincidir.
   // Tu código:
+    if (contrasena === passwd) {
+      return "Contraseña válida";
 
-}
+    }  else {
+      return "Contraseña inválida";
+    } 
+  }
+
+
 
 function verificarPalabra(palabra) {
   // Consigna: Escribe una función que tome como argumento una palabra y verifique las siguientes condiciones:
