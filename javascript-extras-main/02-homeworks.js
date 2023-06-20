@@ -107,7 +107,13 @@ function verificarPalabra(palabra) {
   // - Si la palabra tiene más de 10 caracteres, la función debe devolver "La palabra es larga".
   // - Si la palabra tiene entre 5 y 10 caracteres (inclusive), la función debe devolver "La palabra es mediana".
   // - Si la palabra tiene menos de 5 caracteres, la función debe devolver "La palabra es corta".
-
+    if (palabra.length > 10) {
+      return "La palabra es larga"
+    } else if (palabra.length >= 5 && palabra.length <= 10) {
+      return "La palabra es mediana"
+    } else if (palabra.length < 5) {
+      return "La palabra es corta"
+    } 
 }
 
 function calcularDescuento(totalCompra) {
@@ -117,11 +123,33 @@ function calcularDescuento(totalCompra) {
   // Si el total es menor a 500, no se aplica ningún descuento.
   // La función debe devolver el monto total de la compra después de aplicar el descuento.
 
+  if (totalCompra >= 1000) {
+    return totalCompra - ((10 * totalCompra) / 100 ) 
+  } else if (totalCompra >= 500 && totalCompra < 1000) {
+    return totalCompra - ((5 * totalCompra) / 100)
+  } else if (totalCompra < 500) {
+    return totalCompra
+  }
 }
+//otra forma
+/*function calcularDescuento(totalCompra) {
+  if (totalCompra >= 1000) {
+    return totalCompra - (0.1 * totalCompra);
+  } else if (totalCompra >= 500) {
+    return totalCompra - (0.05 * totalCompra);
+  } else {
+    return totalCompra;
+  }
+} */
 
 function obtenerMayor(a, b, c) {
   // Consigna: Escribe una función que tome como argumento tres números y devuelva el mayor de ellos.
   // Utiliza el operador ternario para resolver este ejercicio.
+   // return a > b && a > c ? a : b > c ? b : c;
+  
+    return a > b ? a > c ? a : c : b > c ? b : c;
+    //return Math.max(a, b, c);
+
 
 }
 
@@ -132,6 +160,13 @@ function calcularPrecioEnvio(peso, distancia) {
   // - Si el peso es mayor a 1kg y menor o igual a 5kg y la distancia es mayor a 100km, el precio de envío es $20.
   // - Si el peso es mayor a 5kg o la distancia es mayor a 500km, el precio de envío es $30.
   // Devuelve el precio de envío calculado.
+  if (peso <= 1 && distancia <= 100) {
+    return 10;
+  } else if (peso > 1 && peso <= 5 && distancia > 100) {
+    return 20;
+  } else {
+    return 30;
+  }
 
 }
 
@@ -139,8 +174,15 @@ function determinarTipoTriangulo(ladoA, ladoB, ladoC) {
   // La funcion recibe los siguientes argumentos los tres lados de un triángulo (ladoA, ladoB, ladoC) y determine su tipo.
   // Devuelve un mensaje indicando si el triángulo es equilátero, isósceles o escaleno.
   // Un triángulo es equilátero si todos sus lados son iguales, isósceles si dos de sus lados son iguales y escaleno si todos sus lados son diferentes.
-
+  if (ladoA === ladoB && ladoB === ladoC) {
+    return "El triángulo es equilátero";
+  } else if (ladoA === ladoB || ladoA === ladoC || ladoB === ladoC) {
+    return "El triángulo es isósceles";
+  } else {
+    return "El triángulo es escaleno";
+  }
 }
+/*En esta función, se utiliza una serie de condicionales para determinar el tipo de triángulo en base a los lados que se le pasan como argumentos. Si los tres lados son iguales, se devuelve el mensaje "El triángulo es equilátero". Si dos de los lados son iguales, se devuelve el mensaje "El triángulo es isósceles". Y si todos los lados son diferentes, se devuelve el mensaje "El triángulo es escaleno". */
 
 function calcularDescuentoExtra(precio, categoria, clientePremium) {
   // La funcion recibe los siguientes argumentos el precio, la categoría y un valor booleano indicando si el cliente es premium.
@@ -148,8 +190,29 @@ function calcularDescuentoExtra(precio, categoria, clientePremium) {
   // Si la categoría es "A" el descuento base es 20% y si es premium se aplica un descuento del 10% adicional.
   // Si la categoría es "B" el descuento base es 15% y si es premium se aplica un descuento del 5% adicional.
   // La función debe devolver el monto total del producto después de aplicar los descuentos.
-
+  let descuentoBase = 0;
+  let descuentoAdicional = 0;
+  
+  if (categoria === "A") {
+    descuentoBase = 0.2;
+    if (clientePremium) {
+      descuentoAdicional = 0.1;
+    }
+  } else if (categoria === "B") {
+    descuentoBase = 0.15;
+    if (clientePremium) {
+      descuentoAdicional = 0.05;
+    }
+  }
+  
+  let descuentoTotal = descuentoBase + descuentoAdicional;
+  let precioFinal = precio - (precio * descuentoTotal);
+  
+  return precioFinal;
 }
+/*Esta función toma los parámetros  precio ,  categoria  y  clientePremium . Primero, se inicializan las variables  descuentoBase  y  descuentoAdicional  a cero. Luego, se verifica la categoría del producto y se asigna el descuento base correspondiente. Si el cliente es premium, se asigna el descuento adicional correspondiente. Después, se calcula el descuento total sumando el descuento base y el adicional. Finalmente, se calcula el precio final restando el descuento total al precio original y se devuelve este valor.  */
+
+
 
 function calcularCalificacionFinal(examen1, examen2, proyecto, asistencia) {
   // La funcion recibe los siguientes argumentos las calificaciones de dos exámenes, un proyecto y el porcentaje de asistencia de un estudiante.
@@ -163,8 +226,32 @@ function calcularCalificacionFinal(examen1, examen2, proyecto, asistencia) {
   // - Si el promedio es menor a 60, la calificación final es "F".
   // La función debe devolver la calificación final.
   // Tu codigo:
+  let promedio = (examen1 + examen2) / 2; 
+  let calificacionFinal = 0; 
+   
+  if (asistencia < 80) { 
+    calificacionFinal = "Reprobado"; 
+  } else { 
+    calificacionFinal = promedio + proyecto; 
+    if (calificacionFinal >= 90) { 
+      calificacionFinal = "A"; 
+    } else if (calificacionFinal >= 80 && calificacionFinal <= 89) { 
+      calificacionFinal = "B"; 
+    } else if (calificacionFinal >= 70 && calificacionFinal <= 79) { 
+      calificacionFinal = "C"; 
+    } else if (calificacionFinal >= 60 && calificacionFinal <= 69) { 
+      calificacionFinal = "D"; 
+    } else { 
+      calificacionFinal = "F"; 
+    } 
+  } 
+   
+  return calificacionFinal; 
+} 
+/*La función recibe las calificaciones de dos exámenes, la calificación de un proyecto y el porcentaje de asistencia de un estudiante. Luego, calcula la calificación final del estudiante de acuerdo con las reglas mencionadas en el comentario. Si el porcentaje de asistencia es menor al 80%, la calificación final es "Reprobado". Si el porcentaje de asistencia es igual o mayor al 80%, se calcula el promedio de las calificaciones de los exámenes y se le suma la calificación del proyecto. Dependiendo del resultado, la función devuelve "A", "B", "C", "D" o "F". */
 
-}
+
+
 
 function calcularDescuentoCompra(totalCompra, cuponDescuento, clientePremium) {
   // La funcion toma los siguientes argumentos: el total de la compra, un cupón de descuento y un valor booleano indicando si el cliente es premium.
@@ -175,9 +262,17 @@ function calcularDescuentoCompra(totalCompra, cuponDescuento, clientePremium) {
   // - Si el cliente no es premium y no tiene un cupón de descuento válido, no se aplica ningún descuento.
   // La función debe devolver el monto total de la compra después de aplicar el descuento.
   // Tu Codigo:
-
+  let descuento = 0;
+  if (clientePremium) {
+    descuento = totalCompra * 0.25;
+  } else if (cuponDescuento === "DESC10") {
+    descuento = totalCompra * 0.1;
+  } else if (cuponDescuento === "DESC5") {
+    descuento = totalCompra * 0.05;
+  }
+  return totalCompra - descuento;
 }
-
+/*La función toma los siguientes argumentos: el total de la compra, un cupón de descuento y un valor booleano indicando si el cliente es premium. La función calcula el descuento correspondiente a la compra según las reglas mencionadas en el comentario. Si el cliente es premium, se aplica un descuento del 25%; si el cliente no es premium pero tiene un cupón de descuento válido "DESC10", se aplica un descuento del 10%; si el cliente no es premium pero tiene un cupón de descuento válido "DESC5", se aplica un descuento del 5%; y si el cliente no es premium y no tiene un cupón de descuento válido, no se aplica ningún descuento. La función devuelve el monto total de la compra después de aplicar el descuento. */
 
 module.exports = {
     imprimirMayor,
