@@ -62,7 +62,7 @@ function anioActual(){
     //Debes retornar el año actual, ayudandote con el Objeto Date (En caso de no conocerlo averigua)
     // Ejemplo -> 8/6/2023 -> deberia retornar solo 2023
     // Tu codigo:
-    return new Date().getFullYear()
+   return new Date().getFullYear()
 
 }
 
@@ -70,8 +70,9 @@ function anioActual(){
 function dateComplet(){
       //Debes retornar el date completo. Día, mes, día del mes, año, hora acutal y zona horaria
     //Tu codigo:
-    return new Date().toLocaleString()
+  
 }
+
 
 
 
