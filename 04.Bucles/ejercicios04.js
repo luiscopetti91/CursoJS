@@ -23,8 +23,16 @@ Finalmente, se retorna el valor de contador, que representa la cantidad de vocal
 function primerDivisible(numeroInicial, num) {
 // Encuentra el primer número divisible por 'num' a partir de un número dado utilizando un bucle while
 // Tu código:👇
-
+let i = numeroInicial;
+while (i % num !== 0) {
+  i++;
 }
+return i;
+}//Revisar test
+/*La función recibe dos parámetros: numeroInicial, que es el número a partir del cual se buscará el primer número divisible, y num, que es el número por el cual se buscará la divisibilidad.
+Dentro del bucle while, se incrementa el valor de numero en cada iteración y se verifica si es divisible por num utilizando el operador %. El bucle continuará hasta que numero sea divisible por num.
+Cuando se encuentra el primer número divisible, se retorna su valor. */
+
 
 
 function encuentraX(x){
