@@ -11,6 +11,7 @@ for (let i = 0; i < phrase.length; i++) {
 }
 
 return contador;
+
 }
 /*En esta función, se define un array vocales que contiene todas las vocales en minúsculas. Luego, se inicializa una variable contador para llevar la cuenta de las vocales encontradas.
 A continuación, se utiliza un bucle for para iterar sobre cada carácter de la frase. Dentro del bucle, se verifica si el carácter actual está incluido en el array vocales. Para ello, se utiliza el método includes() que verifica si un elemento está presente en un array.
@@ -28,7 +29,19 @@ while (i % num !== 0) {
   i++;
 }
 return i;
-}//Revisar test
+
+
+}
+/*
+while (numeroInicial % num !==0) {
+  numeroInicial++;
+
+}
+return numeroInicial;
+}
+*/
+/*
+*/ //Revisar test
 /*La función recibe dos parámetros: numeroInicial, que es el número a partir del cual se buscará el primer número divisible, y num, que es el número por el cual se buscará la divisibilidad.
 Dentro del bucle while, se incrementa el valor de numero en cada iteración y se verifica si es divisible por num utilizando el operador %. El bucle continuará hasta que numero sea divisible por num.
 Cuando se encuentra el primer número divisible, se retorna su valor. */
@@ -39,6 +52,14 @@ function encuentraX(x){
 //Realiza un algoritmo que recorre numeros del 1 al 100, cuando pase por el numero X pasado por parametros
 // retornar "El numero X es: ..."
 // Tu Código:👇
+let i = 1;
+while (i <= 100) {
+  if (i === x) {
+    return "El numero X es: " + i;
+  }
+  i++;
+}
+return "No se encontro el numero";
 
 }
 
@@ -47,13 +68,26 @@ function sumandoTodo(num){
 // numeros que se recorrio
 // Tu código:👇
 
+let i = 0;
+let suma = 0;
+while (i <= num) {
+  suma += i;
+  i++;
+}
+return suma;
+
+
 }
 
 function BinarioADecimal(num) {
 // La funcion recibe por parametro, un numero binario pero en tipo de dato String
 // debes tomar este numero binario y ayudandote de un bucle pasarlo a binario
 // tu código:👇
-
+let decimal = 0;
+  for (let i = 0; i < num.length; i++) {
+    decimal += parseInt(num[num.length - 1 - i]) * Math.pow(2, i);
+  }
+  return decimal;
 }
 
 function Fibonacci(n){
