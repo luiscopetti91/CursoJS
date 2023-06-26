@@ -12,7 +12,10 @@ for (let i = 0; i < phrase.length; i++) {
 
 return contador;
 
+
 }
+
+
 /*En esta función, se define un array vocales que contiene todas las vocales en minúsculas. Luego, se inicializa una variable contador para llevar la cuenta de las vocales encontradas.
 A continuación, se utiliza un bucle for para iterar sobre cada carácter de la frase. Dentro del bucle, se verifica si el carácter actual está incluido en el array vocales. Para ello, se utiliza el método includes() que verifica si un elemento está presente en un array.
 Si el carácter es una vocal, se incrementa el contador contador.
@@ -32,6 +35,9 @@ return i;
 
 
 }
+
+/*"hola"))
+
 /*
 while (numeroInicial % num !==0) {
   numeroInicial++;
@@ -79,15 +85,20 @@ return suma;
 
 }
 
+
 function BinarioADecimal(num) {
 // La funcion recibe por parametro, un numero binario pero en tipo de dato String
 // debes tomar este numero binario y ayudandote de un bucle pasarlo a binario
 // tu código:👇
 let decimal = 0;
-  for (let i = 0; i < num.length; i++) {
-    decimal += parseInt(num[num.length - 1 - i]) * Math.pow(2, i);
-  }
-  return decimal;
+const longitud = num.length;
+
+for (let i = 0; i < longitud; i++) {
+  const bit = parseInt(num.charAt(longitud - 1 - i));
+  decimal += bit * Math.pow(2, i);
+}
+
+return decimal;
 }
 
 function Fibonacci(n){
@@ -95,7 +106,10 @@ function Fibonacci(n){
 // Se puede representar mediante la siguiente fórmula: F(n) = F(n-1) + F(n-2)
 // Tu código:👇
 
+
 }
+
+
 
 function esPrimo(numero) {
 //Escribe un programa que verifique si un número dado es primo o no.
