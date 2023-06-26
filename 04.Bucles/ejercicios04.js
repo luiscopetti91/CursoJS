@@ -79,6 +79,15 @@ while (i <= 100) {
 return "No se encontro el numero";
 }
  */
+/*
+La función encuentraX busca un número dado llamado X en un rango del 1 al 100. Si el número X se encuentra en ese rango, la función devuelve un mensaje indicando que el número X ha sido encontrado y su valor. Si el número X no se encuentra en ese rango, la función devuelve un mensaje indicando que el número no ha sido encontrado.
+ Explicación del código:
+ 1. La función encuentraX comienza con una declaración de variable que inicializa el valor de i a 1.
+2. Luego, se utiliza un bucle while para iterar a través de los números del 1 al 100.
+3. En cada iteración del bucle, se comprueba si el valor actual de i es igual a X.
+4. Si i es igual a X, la función devuelve un mensaje indicando que el número X ha sido encontrado y su valor.
+5. Si i no es igual a X, se incrementa el valor de i y se continúa con la siguiente iteración del bucle.
+6. Si el bucle se completa sin encontrar el número X, la función devuelve un mensaje indicando que el número no ha sido encontrado. */
 
 
 
@@ -94,9 +103,17 @@ while (i <= num) {
   i++;
 }
 return suma;
-
-
 }
+/*
+El código realiza una función llamada "sumandoTodo" que recibe un número como parámetro. La función recorre todos los números desde 0 hasta el número pasado como parámetro y devuelve la suma de todos los números recorridos.
+ Explicación paso a paso del código:
+ 1. Se define la función "sumandoTodo" que recibe un parámetro llamado "num".
+2. Se declaran dos variables "i" y "suma" con valor inicial de 0.
+3. Se utiliza un bucle "while" que se ejecutará mientras "i" sea menor o igual a "num".
+4. Dentro del bucle, se suma el valor actual de "i" a la variable "suma".
+5. Se incrementa el valor de "i" en 1 en cada iteración del bucle.
+6. Cuando el valor de "i" es mayor que "num", el bucle se detiene.
+7. Se devuelve el valor final de la variable "suma". */
 
 
 function BinarioADecimal(num) {
@@ -115,6 +132,12 @@ for (let i = 0; i < longitud; i++) {
 return decimal;
 
 }
+
+/*La función BinarioADecimal convierte un número binario en formato de cadena a decimal y devuelve el resultado.
+ Primero, se declara una variable decimal con valor 0 y una constante longitud que almacena la longitud de la cadena num. 
+ Luego, se utiliza un bucle for que recorre la cadena num de atrás hacia adelante. En cada iteración del bucle, se convierte el carácter en la posición i en un número entero utilizando parseInt y se almacena en la variable bit. 
+ Después, se multiplica el bit por 2 elevado a la i-ésima potencia utilizando Math.pow y se suma al valor de la variable decimal.
+ Finalmente, se devuelve el valor de la variable decimal que representa el número binario convertido a decimal. */
 
 
 function Fibonacci(n){
