@@ -60,7 +60,7 @@ describe('verificarPassword', () => {
     const objectOne = { usuario: 'Avleo', password: "no se que poner :(", email: 'leoavila123@gmail.com'} 
     const objectTwo = { usuario: 'Avleo', password: 'hola', email: 'leoavila123@gmail.com'} 
     expect(verificarPassword(objectOne)).toEqual(true);
-    expect(verificarPassword(objectTwo)).toEqual('Porfavor, pon una contraseña más segura');
+    expect(verificarPassword(objectTwo)).toEqual('Por favor, pon una contraseña más segura');
   });
 });
 
@@ -106,9 +106,9 @@ describe('mostrarInformacionLibro', () => {
       autor: "Dan Brown",
       añoPublicación: 2003
     };
-    expect(mostrarInformacionLibro(libro)).toEqual(`El libro ${libro.título}, escrito por ${libro.autor} , fue publicado en ${libro.añoPublicación}.`);
-    expect(mostrarInformacionLibro(libro1)).toEqual(`El libro ${libro1.título}, escrito por ${libro1.autor} , fue publicado en ${libro1.añoPublicación}.`);
-    expect(mostrarInformacionLibro(libro2)).toEqual(`El libro ${libro2.título}, escrito por ${libro2.autor} , fue publicado en ${libro2.añoPublicación}.`);
-    expect(mostrarInformacionLibro(libro3)).toEqual(`El libro ${libro3.título}, escrito por ${libro3.autor} , fue publicado en ${libro3.añoPublicación}.`);
+    expect(mostrarInformacionLibro(libro)).toEqual(`El libro ${libro.título}, escrito por ${libro.autor}, fue publicado en ${libro.añoPublicación}.`);
+    expect(mostrarInformacionLibro(libro1)).toEqual(`El libro ${libro1.título}, escrito por ${libro1.autor}, fue publicado en ${libro1.añoPublicación}.`);
+    expect(mostrarInformacionLibro(libro2)).toEqual(`El libro ${libro2.título}, escrito por ${libro2.autor}, fue publicado en ${libro2.añoPublicación}.`);
+    expect(mostrarInformacionLibro(libro3)).toEqual(`El libro ${libro3.título}, escrito por ${libro3.autor}, fue publicado en ${libro3.añoPublicación}.`);
   });
 });
