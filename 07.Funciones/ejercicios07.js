@@ -105,18 +105,69 @@ function personaMásJoven(personas) {
 // IMPORTANTE -> la funcion debe llamarse 'contadorDeLetras'
 // Tu código:
 
-function contadorDeLetras() {
-    
+function contadorDeLetras(cadena) {
+  let contador = {}  // Creamos un objeto vacío para almacenar los resultados
+     // Recorremos cada letra de la cadena
+  for (let i = 0; i < cadena.length; i++){
+    let letra = cadena[i]
+     // Si la letra ya existe como propiedad en el objeto contador, incrementamos su valor
+     if (contador[letra]){
+      contador[letra]++;
+     }
+         // Si la letra no existe, la agregamos como propiedad y le asignamos el valor 1
+      else  {
+        contador[letra] = 1;
+      }
+  }
+     // Devolvemos el objeto contador con la cantidad de veces que aparece cada letra
+  return contador;
 }
+/* Ejemplo de uso
+var resultado = contadorDeLetras("Hola mundo");
+console.log(resultado); */
+
+
 
 /**********************************************************************************/
 // Crea una función que reciba un array de objetos que tiene como propiedades "nombre" y "sueldo" y devuelva el objeto con el sueldo más alto.
 // IMPORTANTE -> la funcion debe llamarse 'sueldoMasAlto'
 // Tu código:
-
-function sueldoMasAlto() {
-    
+/*
+var arrayObjetos = [
+  { nombre: "Juan", sueldo: 2000 },
+  { nombre: "María", sueldo: 2500 },
+  { nombre: "Pedro", sueldo: 1800 }
+];
+*/
+function sueldoMasAlto(array) {
+  // Verificamos si el array está vacío
+  if (array.length === 0) {
+    return null; // Si el array está vacío, devolvemos null
+  }
+   // Inicializamos el objeto con el sueldo más alto como el primer objeto del array
+  let sueldoMaximo = array[0];
+   // Recorremos el array a partir del segundo objeto
+  for (let i = 1; i < array.length; i++) {
+   
+     // Verificamos si el sueldo del objeto actual es mayor al sueldo máximo
+    if (array[i].sueldo > sueldoMaximo.sueldo) {
+      sueldoMaximo = array[i]; // Actualizamos el sueldo máximo
+    }
+  }
+   return sueldoMaximo; // Devolvemos el objeto con el sueldo más alto
 }
+ // Ejemplo de uso
+ /*
+let empleados = [
+  { nombre: "Juan", sueldo: 2000 },
+  { nombre: "María", sueldo: 2500 },
+  { nombre: "Pedro", sueldo: 1800 }
+];
+ let resultado = sueldoMasAlto(empleados);
+console.log(resultado); */
+
+
+
 
 /**********************************************************************************/
 // Crea una función que reciba un array de objetos que tiene como propiedades propiedades "nombre" y "nota" 
@@ -124,9 +175,42 @@ function sueldoMasAlto() {
 // IMPORTANTE -> la funcion debe llamarse 'aprobados'
 // Tu código:
 
-function aprobados() {
-    
+function aprobados(arr) {
+    // Crear un nuevo array vacío para almacenar los nombres de los estudiantes aprobados
+let aprobados = []
+     // Iterar sobre cada objeto en el array 'arr'
+for (let i = 0; i < arr.length; i++) {
+  // Obtener la nota del estudiante actual
+  let nota = arr[i].nota;
+       // Verificar si la nota es mayor o igual a 80
+if (nota >= 80) {
+  // Si la nota es mayor o igual a 80, agregar el nombre del estudiante al array 'aprobados'
+  aprobados.push(arr[i].nombre);
 }
+}
+ // Devolver el array 'aprobados' con los nombres de los estudiantes que obtuvieron una nota mayor o igual a 80
+ return aprobados;
+
+}
+
+/**
+ function aprobados(arr) {
+  // Crear un nuevo array vacío para almacenar los nombres de los estudiantes aprobados
+  let aprobados = [];
+   // Iterar sobre cada objeto en el array 'arr'
+  for (let i = 0; i < arr.length; i++) {
+    // Obtener la nota del estudiante actual
+    let nota = arr[i].nota;
+     // Verificar si la nota es mayor o igual a 80
+    if (nota >= 80) {
+      // Si la nota es mayor o igual a 80, agregar el nombre del estudiante al array 'aprobados'
+      aprobados.push(arr[i].nombre);
+    }
+  }
+   // Devolver el array 'aprobados' con los nombres de los estudiantes que obtuvieron una nota mayor o igual a 80
+  return aprobados;
+}
+ */
 
 /**********************************************************************************/
 
