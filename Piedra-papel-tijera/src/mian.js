@@ -14,6 +14,7 @@ const divVS = document.querySelector('.p_vs')
 
 
 
+
 // Events
 
 btnPaper.addEventListener('click', paperSelected)
@@ -35,17 +36,23 @@ let pointsEnemy = 3; // Puntos de vida de la PC
 
 function scissorsSelected(){
 // Tu código:
-
+ataquePlayer = "tijera";
+ataquePC();
+console.log(ataquePlayer);
 }
 
 function rockSelected() {
 // Tu código:
-
+ataquePlayer = "piedra";
+ataquePC();
+console.log(ataquePlayer);
 }
 
 function paperSelected(){
 // Tu código:
-
+ataquePlayer = "papel";
+ataquePC();
+console.log(ataquePlayer);
 }
 
 
@@ -59,7 +66,14 @@ function paperSelected(){
 function ataquePC() {
     let randomAttack = random(1,3) // NO MODIFICAR
 // Tu código:
-
+if(randomAttack === 1){
+    ataquePCRandom = "piedra";
+} else if(randomAttack === 2){
+    ataquePCRandom = "papel";
+} else if(randomAttack === 3){
+    ataquePCRandom = "tijera";
+}
+    combat();
 
 }
 
