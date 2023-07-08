@@ -84,16 +84,33 @@ if(randomAttack === 1){
 
 function combat(){
 // Tu código:
+if (ataquePlayer === ataquePCRandom){
+    msjResult('Empate');
+} else if (
+    (ataquePlayer === 'papel' && ataquePCRandom === 'piedra') ||
+    (ataquePlayer === 'piedra' && ataquePCRandom === 'tijera') ||
+    (ataquePlayer === 'tijera' && ataquePCRandom === 'papel')
+  ) {
+    msjResult('Ganaste'); // Llamar a la función msjResult con el mensaje 'Ganaste'
+    pointsEnemy--; // Restar una vida a la PC
+  } else {
+    msjResult('Perdiste'); // Llamar a la función msjResult con el mensaje 'Perdiste'
+    pointsPlayer--; // Restar una vida al jugador
+  }
 
+  revisarvida(); // Llamar a la función revisarvida para verificar las vidas de los jugadores
 }
-
 // En esta funcion tendras que hacer la lógica de las vidas de los jugadores. Es decir: 
 // si player se queda sin vidas debe enviar un alert 'perdiste la partida :('
 // si enemigo se queda sin vidas debe enviar un alert 'ganaste la partida :D'
 
 function revisarvida(){
 // Tu código:
-
+if (pointsPlayer === 0) {
+    alert('Perdiste la partida :('); // Mostrar un alert indicando que el jugador perdió
+  } else if (pointsEnemy === 0) {
+    alert('Ganaste la partida :D'); // Mostrar un alert indicando que el jugador ganó
+  }
 }
 
   ///////////////////////////////////////////////////////////////////////////////////
