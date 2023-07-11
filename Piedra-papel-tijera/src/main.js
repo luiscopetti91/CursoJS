@@ -81,7 +81,7 @@ if(randomAttack === 1){
 // Si el player eligio 'papel' y la pc tambíen. es un empate, se llama a la funcion 'msjResult()' pasando por argumento 'Empate'
 // Si player eligio 'papel' y pc 'piedra'. gana player, se llama a la funcion 'msjResult()' pasando por argumento 'Ganaste' y se le resta una vida a la PC
 // Asi para todos los posibles casos de elecciones. Y al final de esta funcion se llama a la funcion 'revisarvida()'   
-
+//spanVidasEnemy o spamVidasPlayer => vida actualizada del jugador
 function combat(){
 // Tu código:
 if (ataquePlayer === ataquePCRandom){
@@ -93,9 +93,11 @@ if (ataquePlayer === ataquePCRandom){
   ) {
     msjResult('Ganaste'); // Llamar a la función msjResult con el mensaje 'Ganaste'
     pointsEnemy--; // Restar una vida a la PC
+    spanVidasEnemy.innerHTML = pointsEnemy;
   } else {
     msjResult('Perdiste'); // Llamar a la función msjResult con el mensaje 'Perdiste'
     pointsPlayer--; // Restar una vida al jugador
+    spanVidasPlayer.innerHTML = pointsPlayer;
   }
 
   revisarvida(); // Llamar a la función revisarvida para verificar las vidas de los jugadores
@@ -110,6 +112,12 @@ if (pointsPlayer === 0) {
     alert('Perdiste la partida :('); // Mostrar un alert indicando que el jugador perdió
   } else if (pointsEnemy === 0) {
     alert('Ganaste la partida :D'); // Mostrar un alert indicando que el jugador ganó
+  }
+  if (pointsPlayer === 0 || pointsEnemy === 0) {
+    pointsPlayer = 3; // Reiniciar el contador de vidas del jugador a 3
+    pointsEnemy = 3; // Reiniciar el contador de vidas de la PC a 3
+    spanVidasPlayer.innerHTML = pointsPlayer; // Actualizar la visualización del contador de vidas del jugador
+    spanVidasEnemy.innerHTML = pointsEnemy; // Actualizar la visualización del contador de vidas de la PC
   }
 }
 
