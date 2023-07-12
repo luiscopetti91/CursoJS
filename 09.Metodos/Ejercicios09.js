@@ -5,7 +5,7 @@ function arrayDuplicados(array){
         return numero * 2;
       });
       return arrayDuplicado;
-}
+    }
 
 const nombresPersonas = (array) => {
     // Por parametros recibiras un array de objetos. tendras que iterar entre ellos y devolver un array con todos los nombres
