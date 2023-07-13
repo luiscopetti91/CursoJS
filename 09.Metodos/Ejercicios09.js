@@ -7,6 +7,9 @@ function arrayDuplicados(array){
       return arrayDuplicado;
     }
 
+
+
+
 const nombresPersonas = (array) => {
     // Por parametros recibiras un array de objetos. tendras que iterar entre ellos y devolver un array con todos los nombres
     // Usa metodo .map().. Ayuda => la propiedad de los nombres es => name.
@@ -23,6 +26,9 @@ const nombresPersonas = (array) => {
  const nombres = nombresPersonas(personas);
 console.log(nombres);
  */
+
+
+
 
 
 function masImpuestos(array){
@@ -67,19 +73,41 @@ const productos = [
 
 
 
+
 function NombresLargos(array){
     // Usando metodo Filter(), deberás retornar todos los nombres que superen una longitud mayor o igual a 5  (FILTER)
     // Tu codigo:
-
+    return array.filter(function(nombre) {
+      return nombre.length >= 5;
+    });
 }
+/*
+Este código utiliza la función filter() para filtrar el arreglo array y devolver todos los nombres que tienen una longitud de 5 o más. La función filter() toma una función como parámetro y devuelve un nuevo arreglo que contiene todos los elementos del arreglo original para los que la función devuelve true. En este caso, la función devuelve true si la longitud del nombre es 5 o más.
+Por ejemplo, si el arreglo array tiene los siguientes elementos:
+['Juan', 'María', 'Pedro', 'Sofía', 'Luis', 'Antonia']
+La función NombresLargos() devolverá el siguiente arreglo:
+['María', 'Sofía', 'Antonia']
+*/
 
-function filtaradoPorCategoria(array, categoria){
+/*
+
+function filtradoPorCategoria(array, categoria) {
+  return array.filter(película => película.categoria === categoria);
+} */
+
+
+
+function filtradoPorCategoria(array, categoria){
     // Recibiras por porametros un array de objetos con peliculas de la siguiente manera: {titulo: 'Spiderman', Estreno: , Categoria:  }.
     // deberás usar metodo filter, para devolver un array con los nombres de las peliculas que sean de la categoria pedida.
     // Tu codigo:
+    return array.filter(pelicula => pelicula.categoria === categoria)
+    .map(pelicula => pelicula.titulo);
+  } 
 
-}
 
+
+  
 function examenIngreso(array){
     // Recibiras por parametros un array de objetos con datos de Alumnos que se presentaron a rendir el examen de ingreso.
     // Deberas devolver un array con los datos (obj). de los alumnos que aprobaron el examon (nota >= 70) y inscripcion completa (inscripcion = true)
@@ -101,7 +129,7 @@ module.exports = {
     nombresPersonas,
     masImpuestos,
     NombresLargos,
-    filtaradoPorCategoria,
+    filtradoPorCategoria,
     examenIngreso,
     nombreContiene
 

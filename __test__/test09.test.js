@@ -3,7 +3,7 @@ const {
     nombresPersonas,
     masImpuestos,
     NombresLargos,
-    filtaradoPorCategoria,
+    filtradoPorCategoria,
     examenIngreso,
     nombreContiene
 } = require('../09.Metodos/Ejercicios09.js');
@@ -114,7 +114,7 @@ describe('NombresLargos', () => {
     })
 })
 
-describe('filtaradoPorCategoria', () => {
+describe('filtradoPorCategoria', () => {
     const peliculas = [
         {
           titulo: "Inception",
@@ -152,10 +152,11 @@ describe('filtaradoPorCategoria', () => {
         { titulo: 'The Lion King', estreno: 1994, categoria: 'Animación' },
         { titulo: 'Inception', estreno: 2010, categoria: 'Ciencia ficción' }
       ];
+      
     it('Deberia filtrar por categoria', ()=> {
-        expect(filtaradoPorCategoria(peliculas,'Acción')).toStrictEqual(["The Dark Knight",'Spiderman','The Avengers'])
-        expect(filtaradoPorCategoria(peliculas,'Drama')).toStrictEqual(["The Shawshank Redemption","Fight Club"])
-        expect(filtaradoPorCategoria(peliculas,'Ciencia ficción')).toStrictEqual(["Inception","Interstellar",'Inception'])
+        expect(filtradoPorCategoria(peliculas,'Acción')).toStrictEqual(["The Dark Knight","Spiderman", "The Avengers"])
+        expect(filtradoPorCategoria(peliculas,'Drama')).toStrictEqual(["The Shawshank Redemption","Fight Club"])
+        expect(filtradoPorCategoria(peliculas,'Ciencia ficción')).toStrictEqual(["Inception","Interstellar",'Inception'])
     })
 })
 
