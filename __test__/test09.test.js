@@ -68,25 +68,25 @@ describe('masImpuestos', () => {
             producto: 'Zapatillas Converse Chuck Taylor',
             nSerie: '11111',
             precio: 59.99,
-            impuestos: 5
+            impuestos: 6
           },
           {
             producto: 'Zapatillas Vans Old Skool',
             nSerie: '22222',
             precio: 69.99,
-            impuestos: 6
+            impuestos: 7
           },
           {
             producto: 'Zapatillas New Balance 574',
             nSerie: '33333',
             precio: 79.99,
-            impuestos: 7
+            impuestos: 8
           },
           {
             producto: 'Zapatillas Skechers Memory Foam',
             nSerie: '44444',
             precio: 89.99,
-            impuestos: 8
+            impuestos: 9
           }
       ];
     it('Deberia devolver el array de objetos con la propiedad impuestos agregada', ()=> {

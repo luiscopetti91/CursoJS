@@ -31,17 +31,30 @@ function masImpuestos(array){
     // Usar metodo .map()
     // Tu codigo:
     let arrayConImpuestos = array.map((objeto) => {
-        let impuestos = objeto.precio * 0.1;
+        let impuestos = Math.ceil(objeto.precio * 0.1);
         let objetoConImpuestos = {
           producto: objeto.producto,
           nSerie: objeto.nSerie,
           precio: objeto.precio,
-          Impuestos: impuestos
+          impuestos: impuestos
         };
         return objetoConImpuestos;
       });
       return arrayConImpuestos;
 }
+/*}
+function masImpuestos(array) {
+  return array.map(({ producto, nSerie, precio }) => ({
+    producto,
+    nSerie,
+    precio,
+    impuestos: Math.ceil(precio * 0.1)
+  }));
+}
+*/
+
+
+
 /*
 const productos = [
   { producto: 'Zapatillas Nike', nSerie: 1511440, precio: 1000 },
